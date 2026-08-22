@@ -28,7 +28,7 @@ Alongside Cloth Savvy, I've built tools and extensions for the MIT App Inventor 
 
 **Mobile & Web:** Flutter · Android Development · Next.js · React · TypeScript
 
-**Backend & Infra:** Supabase · Cloud GPU hosting · Edge functions
+**Backend & Infra:** Supabase · Cloud GPU hosting · Edge functions · Authentication
 
 **Core Languages:** Dart · Java · Python
 
