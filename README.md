@@ -35,6 +35,6 @@ Alongside Cloth Savvy, I've built tools and extensions for the MIT App Inventor 
 ---
 
 <p align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=HorizonXDev&show_icons=true&theme=tokyonight&hide_border=true"/>
-  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=HorizonXDev&layout=compact&theme=tokyonight&hide_border=true"/>
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=HorizonXDev&rank_icon=github&show_icons=true&include_all_commits=true&theme=transparent"/>
+  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs?username=HorizonXDev&hide_progress=true&langs_count=10&theme=transparent"/>
 </p>
