@@ -3,7 +3,6 @@
    Dark / light themes · device-preference default · no framework
    ============================================================ */
 
-
 /* ---------- Theme tokens (light = default) ---------- */
 :root {
   --bg: #f7f7fb;
@@ -78,7 +77,6 @@
   }
 }
 
-
 /* ---------- Reset / base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -134,7 +132,6 @@ h1, h2, h3, .brand-name {
   margin-inline: auto;
 }
 
-
 /* ---------- Gradient text ---------- */
 .gradient-text {
   background: linear-gradient(100deg, var(--accent), var(--accent-2));
@@ -143,7 +140,6 @@ h1, h2, h3, .brand-name {
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -172,7 +168,6 @@ h1, h2, h3, .brand-name {
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 .btn-sm { padding: 0.55rem 1.1rem; font-size: 0.9rem; }
 .btn-block { width: 100%; justify-content: center; }
-
 
 /* ---------- Navbar ---------- */
 .nav {
@@ -249,7 +244,6 @@ h1, h2, h3, .brand-name {
 .icon-moon { display: none; }
 [data-theme="dark"] .icon-sun { display: none; }
 [data-theme="dark"] .icon-moon { display: block; }
-
 
 /* ---------- Hero ---------- */
 .hero {
@@ -383,16 +377,6 @@ h1, h2, h3, .brand-name {
 }
 .meta-chip svg { width: 16px; height: 16px; }
 
-
-/* ---------- Scroll reveal ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible { opacity: 1; transform: none; }
-
-
 /* Stats */
 .stats {
   margin-top: 4rem;
@@ -429,7 +413,6 @@ h1, h2, h3, .brand-name {
   color: var(--muted);
 }
 
-
 /* ---------- Sections ---------- */
 .section { padding: 110px 0; }
 .section-alt { background: var(--bg-alt); }
@@ -455,7 +438,6 @@ h1, h2, h3, .brand-name {
   max-width: 600px;
   margin-bottom: 2.6rem;
 }
-
 
 /* ---------- About ---------- */
 .about-grid {
@@ -523,7 +505,6 @@ h1, h2, h3, .brand-name {
 .about-card-list strong { font-size: 0.98rem; }
 .about-card-list span { font-size: 0.88rem; color: var(--muted); }
 .about-card .btn { margin-top: 1.3rem; }
-
 
 /* ---------- Projects ---------- */
 .projects-grid {
@@ -623,7 +604,6 @@ h1, h2, h3, .brand-name {
 }
 .project-link:hover { color: var(--accent-2); }
 
-
 /* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
@@ -659,7 +639,6 @@ h1, h2, h3, .brand-name {
   transition: border-color 0.18s ease, color 0.18s ease;
 }
 .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-
 
 /* ---------- Timeline ---------- */
 .timeline { position: relative; max-width: 720px; margin-top: 1rem; }
@@ -703,7 +682,6 @@ h1, h2, h3, .brand-name {
 }
 .timeline-content h3 { font-size: 1.22rem; font-weight: 700; margin-bottom: 0.45rem; }
 .timeline-content p { color: var(--text-soft); font-size: 0.98rem; }
-
 
 /* ---------- Contact ---------- */
 .contact-wrap {
@@ -777,7 +755,6 @@ a.contact-method:hover { border-color: var(--accent); transform: translateX(4px)
 .contact-form .btn { margin-top: 1rem; }
 .form-note { font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 0.4rem; }
 
-
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--border); padding: 2.6rem 0; background: var(--bg-alt); }
 .footer-inner {
@@ -805,6 +782,23 @@ a.contact-method:hover { border-color: var(--accent); transform: translateX(4px)
 .footer-links img { width: 18px; height: 18px; object-fit: contain; }
 .footer-copy { font-size: 0.82rem; color: var(--muted); }
 
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

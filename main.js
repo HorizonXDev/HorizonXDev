@@ -5,7 +5,6 @@
 (() => {
   "use strict";
 
-
   /* ---------- Theme (dark / light, default = system) ---------- */
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
@@ -25,13 +24,11 @@
     localStorage.setItem("theme", next);
   });
 
-
   /* ---------- Navbar: shadow on scroll ---------- */
   const nav = document.getElementById("navbar");
   const onScrollNav = () => nav.classList.toggle("scrolled", window.scrollY > 10);
   onScrollNav();
   window.addEventListener("scroll", onScrollNav, { passive: true });
-
 
   /* ---------- Mobile menu ---------- */
   const menuToggle = document.getElementById("menuToggle");
@@ -50,7 +47,6 @@
       menuToggle.setAttribute("aria-label", "Open menu");
     });
   });
-
 
   /* ---------- Typewriter roles ---------- */
   const roles = [
@@ -83,7 +79,6 @@
     })();
   }
 
-
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
@@ -103,6 +98,27 @@
     revealEls.forEach((el) => el.classList.add("visible"));
   }
 
+  /* ---------- Active nav link on scroll ---------- */
+  const sections = document.querySelectorAll("section[id]");
+  const navAnchors = document.querySelectorAll(".nav-link[href^='#']");
+
+  if ("IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navAnchors.forEach((a) => {
+            a.classList.toggle(
+              "active",
+              a.getAttribute("href") === `#${entry.target.id}`
+            );
+          });
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
 
   /* ---------- Animated counters ---------- */
   const counters = document.querySelectorAll("[data-count]");
@@ -148,7 +164,6 @@
     });
   }
 
-
   /* ---------- Contact form (mailto) ---------- */
   const form = document.getElementById("contactForm");
   form.addEventListener("submit", (e) => {
@@ -163,5 +178,4 @@
     );
     window.location.href = `mailto:horizon3833@gmail.com?subject=${subject}&body=${body}`;
   });
-
 })();
