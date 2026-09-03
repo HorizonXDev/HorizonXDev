@@ -52,4 +52,56 @@
   });
 
 
+  /* ---------- Typewriter roles ---------- */
+  const roles = [
+    "Founder of Cloth Savvy",
+    "Full-Stack Developer",
+    "Flutter & Java Developer",
+    "MIT App Inventor Extension Developer",
+  ];
+  const typeEl = document.getElementById("typewriter");
+  if (typeEl) {
+    let roleIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
+
+    (function type() {
+      const word = roles[roleIdx];
+      charIdx += deleting ? -1 : 1;
+      typeEl.textContent = word.slice(0, charIdx);
+
+      let delay = deleting ? 38 : 78;
+      if (!deleting && charIdx === word.length) {
+        delay = 2100;
+        deleting = true;
+      } else if (deleting && charIdx === 0) {
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        delay = 420;
+      }
+      setTimeout(type, delay);
+    })();
+  }
+
+
+  /* ---------- Scroll reveal ---------- */
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("visible"));
+  }
+
+
 })();
