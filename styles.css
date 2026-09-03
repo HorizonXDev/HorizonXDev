@@ -623,3 +623,40 @@ h1, h2, h3, .brand-name {
 }
 .project-link:hover { color: var(--accent-2); }
 
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+.skill-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.7rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill-group:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.skill-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+.skill-icon { font-size: 1.3rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tag {
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 0.42rem 0.85rem;
+  border-radius: 9px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.skill-tag:hover { border-color: var(--accent); color: var(--accent); }
+
