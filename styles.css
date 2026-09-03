@@ -392,3 +392,40 @@ h1, h2, h3, .brand-name {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
+
+/* Stats */
+.stats {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.stat {
+  background: var(--card);
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+.stat-value {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.stat-suffix { font-weight: 700; }
+.stat-value, .stat-suffix { display: inline; }
+.stat-label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+

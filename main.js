@@ -104,4 +104,49 @@
   }
 
 
+  /* ---------- Animated counters ---------- */
+  const counters = document.querySelectorAll("[data-count]");
+  const animateCount = (el) => {
+    const target = Number(el.dataset.count);
+    const decimals = target % 1 !== 0;
+    const fmt = (v) => {
+      if ("plain" in el.dataset) return String(Math.floor(v));
+      if (decimals) return v.toFixed(1);
+      return Math.floor(v).toLocaleString("en-IN");
+    };
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * eased);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const counterIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            counterIo.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+    counters.forEach((c) => counterIo.observe(c));
+  } else {
+    counters.forEach((c) => {
+      const t = Number(c.dataset.count);
+      c.textContent =
+        c.dataset.plain ? String(Math.floor(t))
+        : t % 1 !== 0 ? t.toFixed(1)
+        : t.toLocaleString("en-IN");
+    });
+  }
+
+
 })();
