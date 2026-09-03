@@ -777,3 +777,71 @@ a.contact-method:hover { border-color: var(--accent); transform: translateX(4px)
 .contact-form .btn { margin-top: 1rem; }
 .form-note { font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 0.4rem; }
 
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--border); padding: 2.6rem 0; background: var(--bg-alt); }
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+.footer-tagline { color: var(--muted); font-size: 0.92rem; }
+.footer-links { display: flex; gap: 1rem; }
+.footer-links a {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text-soft);
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.footer-links a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+.footer-links svg { width: 18px; height: 18px; }
+.footer-links img { width: 18px; height: 18px; object-fit: contain; }
+.footer-copy { font-size: 0.82rem; color: var(--muted); }
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+  .about-card { position: static; }
+  .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .menu-btn { display: grid; }
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 1.5rem 1.2rem;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 0.75rem 0; font-size: 1rem; }
+  .nav-link.active::after { display: none; }
+  .nav-cta { text-align: center; margin-top: 0.5rem; }
+  .hero { padding: 140px 0 70px; }
+  .hero-meta { gap: 0.9rem; }
+  .about-points { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .section { padding: 80px 0; }
+}
