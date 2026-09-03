@@ -149,4 +149,19 @@
   }
 
 
+  /* ---------- Contact form (mailto) ---------- */
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    const subject = encodeURIComponent(`Portfolio message from ${name || "someone"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+    window.location.href = `mailto:horizon3833@gmail.com?subject=${subject}&body=${body}`;
+  });
+
 })();
