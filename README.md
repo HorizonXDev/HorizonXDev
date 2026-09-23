@@ -2,7 +2,7 @@
 <h3 align="center">Developer & Founder of Cloth Savvy</h3>
 
 <p align="center">
-  🎓 Starting college at Amity University Mohali &nbsp;|&nbsp; 📱 Building and shipping <b>Cloth Savvy</b>.
+  🎓 At Amity University Mohali &nbsp;|&nbsp; 📱 Building and shipping <b>Cloth Savvy</b>.
 </p>
 
 <p align="center">
